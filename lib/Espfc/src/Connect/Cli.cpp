@@ -351,6 +351,7 @@ const Cli::Param * Cli::initialize(ModelConfig& c)
   static const char* throtleLimitTypeChoices[] = { PSTR("NONE"), PSTR("SCALE"), PSTR("CLIP"), NULL };
   static const char* inputFilterChoices[] = { PSTR("INTERPOLATION"), PSTR("FILTER"), NULL };
   static const char* inputItermRelaxChoices[] = { PSTR("OFF"), PSTR("RP"), PSTR("RPY"), PSTR("RP_INC"), PSTR("RPY_INC"), NULL };
+  static const char* serialRxProviderChoices[] = { PSTR("SPEKTRUM1024"), PSTR("SPEKTRUM2048"), PSTR("SBUS"), PSTR("SUMD"), PSTR("SUMH"), PSTR("XBUS_MODE_B"), PSTR("XBUS_MODE_B_RJ01"), PSTR("IBUS"), PSTR("JETIEXBUS"), PSTR("CRSF"), PSTR("SRXL"), PSTR("TARGET_CUSTOM"), PSTR("FPORT"), NULL };
 
   static const char* voltageSourceChoices[] = { PSTR("NONE"), PSTR("ADC"), NULL };
   static const char* currentSourceChoices[] = { PSTR("NONE"), PSTR("ADC"), NULL };
@@ -497,6 +498,7 @@ const Cli::Param * Cli::initialize(ModelConfig& c)
     Param(PSTR("input_ff_lpf_freq"), &c.input.filterDerivative.freq),
 
     Param(PSTR("input_rssi_channel"), &c.input.rssiChannel),
+    Param(PSTR("serialrx_provider"), &c.input.serialRxProvider, serialRxProviderChoices),
 
     Param(PSTR("input_0"), &c.input.channel[0]),
     Param(PSTR("input_1"), &c.input.channel[1]),

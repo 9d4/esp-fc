@@ -459,6 +459,7 @@ set input_lpf_factor 50
 set input_ff_lpf_type PT3
 set input_ff_lpf_freq 0
 set input_rssi_channel 0
+set serialrx_provider SBUS
 set input_0 0 1000 1500 2000 A 1500
 set input_1 1 1000 1500 2000 A 1500
 set input_2 3 1000 1500 2000 A 1500
